@@ -233,20 +233,12 @@ document.getElementById("lform").addEventListener("submit", function (e) {
               } else if (acs[i][2] == 'admin') {
                 document.getElementById("remsc").innerHTML = '';
                 loader()
-                document.getElementById("bred").innerHTML = 'Developer Account - Test Profile 0x.4';
-              } else if (acs[i][2] == 'guest') {
-                document.getElementById("remsc").innerHTML = '';
-                loader()
-                document.getElementById("bred").innerHTML = 'Demo Account - Your progress is not saved.<br>Please signup to obtain an account.';
-              } else if (acs[i][2] == 's') {
-                document.getElementById("remsc").innerHTML = '';
-                document.getElementById("bred").innerHTML = `This account has been suspended.<br>Reason: ${acs[i][3]}`;
               } else {
-                document.getElementById("bred").innerHTML = `There was an error. Please contact Aries.<br>Send him this code: ${btoa(acs[i])}`;
+                alertify.error("Error!");
               }
 
             } else {
-              document.getElementById("bred").innerHTML = 'Invalid Key.';
+              alertify.error("Invalid Key");
             }
           } else {
             console.log(p)
@@ -254,10 +246,10 @@ document.getElementById("lform").addEventListener("submit", function (e) {
           }
         }
         if (tru == 0) {
-          document.getElementById("bred").innerHTML = 'Invalid ID.';
+          alertify.error("Invalid ID");
 
         }
       });
 	
-alertify.error("Invalid Login.");
+
 </script>
