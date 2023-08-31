@@ -225,7 +225,7 @@ function idsb() {
               } else if (acs[i][2] == '1') {
                 document.getElementById("remsc").innerHTML = '';
 		document.getElementById("gameframe").innerHTML = '<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame"></body>';
-                loader()
+		setTimeout("loader()", 780);
                 alertify.success("Logged in.");
 				alertify.info("This game was created by Aries Powvalla. Do not claim ownership of this content.", 8000);
 
