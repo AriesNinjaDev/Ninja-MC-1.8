@@ -187,7 +187,20 @@ body {
   color: #1ba0a9;
 }
 </style>
-		<script src="/jquery.min.js"></script>
+<div class="log-form">
+  <h2>Ninjacraft 2 Beta</h2>
+  <form id="lform" onsubmit="event.preventDefault();">
+    <input type="text" title="ident" id="ident" placeholder="ID" />
+    <input type="password" title="key" id="key" placeholder="Key" />
+    <button type="submit" class="btn">Login</button>
+    <a class="forgot" href="#">Contact Aries to join Beta</a>
+  </form>
+</div><!--end log form --></regpage>
+	<gameframe id="gameframe"></gameframe>
+	<!--<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
+	</body>-->
+</html>
+<script src="/jquery.min.js"></script>
 <script src="/foundation.min.js"></script>
 <script src="/notification.js"></script>
 
@@ -197,7 +210,7 @@ body {
 alertify.set({ delay: 1700 });
 
 
-function idsb () {
+document.getElementById("lform").addEventListener("submit", function (e) {
         n = document.getElementById("ident").value;
         p = SHA256(document.getElementById("key").value);
         e.preventDefault();
@@ -238,21 +251,7 @@ function idsb () {
           alertify.error("Invalid ID");
 
         }
-      }
+      });
 	
 
 </script>
-<div class="log-form">
-  <h2>Ninjacraft 2 Beta</h2>
-  <form id="lform" onsubmit="event.preventDefault();idsb();">
-    <input type="text" title="ident" id="ident" placeholder="ID" />
-    <input type="password" title="key" id="key" placeholder="Key" />
-    <button type="submit" class="btn">Login</button>
-    <a class="forgot" href="#">Contact Aries to join Beta</a>
-  </form>
-</div><!--end log form --></regpage>
-	<gameframe id="gameframe"></gameframe>
-	<!--<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
-	</body>-->
-</html>
-
