@@ -216,6 +216,7 @@ function idsb() {
         p = document.getElementById("key").value;
         event.preventDefault();
         tru = 0
+	tillsb = 0
         for (let i = 0; i < acs.length; i++) {
           if (n == acs[i][0]) {
             if (p == acs[i][1]) {
@@ -234,14 +235,14 @@ function idsb() {
 
             } else {
               alertify.error("Invalid Key");
-	      break
+	      tillsb = 1
             }
         
 	
 	}
         
 }
-	if (tru == 0) {
+	if ((tru == 0) && (tillsb == 0)) {
           alertify.error("Invalid ID");
         }
 }
