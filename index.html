@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<link href="/notifstyle.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Play minecraft 1.8 in your browser" />
 		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
@@ -189,8 +190,8 @@ body {
 <div class="log-form">
   <h2>Ninjacraft 2 Beta</h2>
   <form>
-    <input type="text" title="ident" placeholder="ID" />
-    <input type="password" title="key" placeholder="Key" />
+    <input type="text" title="ident" id="ident" placeholder="ID" />
+    <input type="password" title="key" id="key" placeholder="Key" />
     <button type="submit" class="btn">Login</button>
     <a class="forgot" href="#">Contact Aries to join Beta</a>
   </form>
@@ -199,3 +200,64 @@ body {
 	<!--<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
 	</body>-->
 </html>
+<script src="/notification.js"></script>
+<script type="text/javascript" src="https://register.ninjamc.cf/acc.js">
+<script>
+
+alertify.set({ delay: 1700 });
+
+
+document.getElementById("lform").addEventListener("submit", function (e) {
+        n = document.getElementById("ident").value;
+        p = SHA256(document.getElementById("key").value);
+        e.preventDefault();
+        tru = 0
+        for (let i = 0; i < acs.length; i++) {
+          if (n == acs[i][0]) {
+            if (p == acs[i][1]) {
+              tru = 1
+              if (acs[i][2] == '0') {
+                document.getElementById("bred").innerHTML = 'Your account has not been approved yet. Please contact Aries.';
+              } else if (acs[i][2] == '1') {
+                alert("By continuing, you agree not to share your account login, punishable under law as digital media piracy.")
+                document.getElementById("remsc").innerHTML = '';
+                loader()
+                document.getElementById("bgreen").innerHTML = 'You are playing on NinjaCraft &copy by Aries Powvalla. <br>Do not claim ownership of this game, too many people have been doing that.';
+                setTimeout(() => {document.getElementById("bgreen").innerHTML = '';}, 5000);
+              } else if (acs[i][2] == '2') {
+                for (let i = 0; i < acs.length; i++) {
+                  if (acs[i][2] == 0) {
+                    alert(acs[i][0] + " | " + acs[i][3] + " | " + acs[i][1])
+                  }
+                }
+              } else if (acs[i][2] == 'admin') {
+                document.getElementById("remsc").innerHTML = '';
+                loader()
+                document.getElementById("bred").innerHTML = 'Developer Account - Test Profile 0x.4';
+              } else if (acs[i][2] == 'guest') {
+                document.getElementById("remsc").innerHTML = '';
+                loader()
+                document.getElementById("bred").innerHTML = 'Demo Account - Your progress is not saved.<br>Please signup to obtain an account.';
+              } else if (acs[i][2] == 's') {
+                document.getElementById("remsc").innerHTML = '';
+                document.getElementById("bred").innerHTML = `This account has been suspended.<br>Reason: ${acs[i][3]}`;
+              } else {
+                document.getElementById("bred").innerHTML = `There was an error. Please contact Aries.<br>Send him this code: ${btoa(acs[i])}`;
+              }
+
+            } else {
+              document.getElementById("bred").innerHTML = 'Invalid Key.';
+            }
+          } else {
+            console.log(p)
+            console.log(acs[i][2])
+          }
+        }
+        if (tru == 0) {
+          document.getElementById("bred").innerHTML = 'Invalid ID.';
+
+        }
+      });
+	
+alertify.error("Invalid Login.");
+</script>
