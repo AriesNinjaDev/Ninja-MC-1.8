@@ -228,15 +228,6 @@ function idsb() {
                 alertify.success("Logged in.");
 				alertify.info("This game was created by Aries Powvalla. Do not claim ownership of this content.", 8000);
 
-              } else if (acs[i][2] == '2') {
-                for (let i = 0; i < acs.length; i++) {
-                  if (acs[i][2] == 0) {
-                    alert(acs[i][0] + " | " + acs[i][3] + " | " + acs[i][1])
-                  }
-                }
-              } else if (acs[i][2] == 'admin') {
-                document.getElementById("remsc").innerHTML = '';
-                loader()
               } else {
                 alertify.error("Error!");
               }
@@ -244,13 +235,13 @@ function idsb() {
             } else {
               alertify.error("Invalid Key");
             }
-          } else {
-            console.log(p)
-            console.log(acs[i][2])
-          }
-        if (tru == 0) {
+        
+	
+	}
+        
+}
+	if (tru == 0) {
           alertify.error("Invalid ID");
         }
-        }
-      }
+}
 </script>
