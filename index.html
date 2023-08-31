@@ -198,8 +198,7 @@ body {
   </form>
 </div><!--end log form --></regpage>
 	<gameframe id="gameframe"></gameframe>
-	<!--<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
-	</body>-->
+	
 </html>
 <script src="/jquery.min.js"></script>
 <script src="/foundation.min.js"></script>
@@ -225,6 +224,7 @@ function idsb() {
                 alertify.error("Your account is currently deactivated.");
               } else if (acs[i][2] == '1') {
                 document.getElementById("remsc").innerHTML = '';
+		document.getElementById("gameframe").innerHTML = '<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame"></body>';
                 loader()
                 alertify.success("Logged in.");
 				alertify.info("This game was created by Aries Powvalla. Do not claim ownership of this content.", 8000);
