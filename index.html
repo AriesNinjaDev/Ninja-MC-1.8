@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="fix-webm-duration.js"></script>
 		<script type="text/javascript">
 			"use strict";
-			window.addEventListener("load", () => {
+			function loader() {
 				if(document.location.href.startsWith("file:")) {
 					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
 				}else {
@@ -44,7 +44,7 @@
 					main();
 					
 				}
-			});
+			}
 		</script>
 	</head>
 	<regpage id="regpage"><style>@font-face {
@@ -125,7 +125,7 @@ body {
   padding: 2em;
 }
 .log-form h2 {
-  color: #5d5d5d;
+  color: #ffffff;
   font-family: 'open sans condensed';
   font-size: 1.35em;
   display: block;
