@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -48,7 +48,7 @@
 			}
 		</script>
 	</head>
-	<regpage id="regpage"><style>@font-face {
+	<regpage id="remsc"><style>@font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
@@ -217,13 +217,13 @@ document.getElementById("lform").addEventListener("submit", function (e) {
             if (p == acs[i][1]) {
               tru = 1
               if (acs[i][2] == '0') {
-                document.getElementById("bred").innerHTML = 'Your account has not been approved yet. Please contact Aries.';
+                alertify.error("Your account is currently deactivated.");
               } else if (acs[i][2] == '1') {
-                alert("By continuing, you agree not to share your account login, punishable under law as digital media piracy.")
                 document.getElementById("remsc").innerHTML = '';
                 loader()
-                document.getElementById("bgreen").innerHTML = 'You are playing on NinjaCraft &copy by Aries Powvalla. <br>Do not claim ownership of this game, too many people have been doing that.';
-                setTimeout(() => {document.getElementById("bgreen").innerHTML = '';}, 5000);
+                alertify.success("Logged in.");
+				alertify.info("This game was created by Aries Powvalla. Do not claim ownership of this content.", 8000);
+}
               } else if (acs[i][2] == '2') {
                 for (let i = 0; i < acs.length; i++) {
                   if (acs[i][2] == 0) {
